@@ -1,0 +1,11 @@
+bcrypt==3.1.1
+cffi==1.8.3
+Django==1.10.2
+django-debug-toolbar==1.6
+django-extensions==1.7.4
+pycparser==2.14
+pydot==1.2.3
+pygraphviz==1.4.dev0
+pyparsing==2.1.10
+six==1.10.0
+sqlparse==0.2.1
