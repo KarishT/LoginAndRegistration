@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Success! Welcome, {{request.session.user.first_name}}</h1>
+  <h3>Succesfully registered/logged in!</h3>
+  <form action="/logout">
+    <input type="submit" name="name" value="Log Out">
+  </form>
+</body>
+</html>

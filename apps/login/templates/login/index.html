@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login And Registration</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static '/login/css/login.css' %}" media="screen" title="no title">
+</head>
+<body>
+  {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+  <form action="/register" method="post">
+    {% csrf_token %}
+    <h2>Registration</h2>
+    <ul>
+      <li>First Name:<input type="text" name="f_name" value="" placeholder="eg.Sheldon"></li>
+      <li>Last Name:<input type="text" name="l_name" value="" placeholder="eg.Cooper"></li>
+      <li>Email:<input type="text" name="email" value="" placeholder="abc@gmail.com"></li>
+      <li>Password:<input type="text" name="password" value="" placeholder="******"></li>
+      <li>Confirm pw:<input type="text" name="cpassword" value="" placeholder="******"></li>
+      <li><input type="submit" name="name" value="Register"></li>
+    </ul>
+  </form>
+
+<hr>
+
+  <form class="" action="/login" method="post">
+    {% csrf_token %}
+    <h2>Login</h2>
+    <ul>
+        <li>Email:<input type="text" name="email" value="" placeholder="abc@gmail.com"></li>
+        <li>Password:<input type="text" name="password" value="" placeholder="*********"></li>
+        <li><input type="submit" name="name" value="Login"></li>
+        {{error}}
+    </ul>
+  </form>
+
+</body>
+</html>
